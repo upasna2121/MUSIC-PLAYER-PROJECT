@@ -1,0 +1,865 @@
+/* -----------------------------------------------------------------GENERIC  STYLES---------------------------------------------------------------------------------------- */
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: sans-serif;
+    color: white;
+}
+body{
+    background-image: url(./IMAGES/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/*---------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------*/
+header{
+    height: 75px; 
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    box-shadow: 1px 1px 9px 1px #00000038;
+    background-color:  rgb(60 19 157);
+     position: fixed;
+     top: 0;
+     z-index: 1000000;
+
+}
+
+.logo span{
+    font-weight: lighter;
+    color: violet;
+    font-size: 20px;
+
+}
+
+.sectionheading{ 
+
+    height: 100%;
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.rightsection{
+    width: 45%;
+
+}
+.leftsection{
+    width: 30%;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.search button {
+    padding: 5px;
+     background-color: white; 
+
+}
+.search button i{
+    color: black;
+
+}
+.search input {
+    border: none;
+    padding: 5px ;
+    
+}
+.leftbtn {
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+
+}
+.rightbtn {
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.logo{
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: space-around;
+    color:white; 
+    width: 50%;
+    align-items: center;
+    display: flex; 
+    
+}
+.logo img{
+    height: 60px;
+    width: 60px;
+}
+.head{
+    justify-content: space-around;
+    color:white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+
+
+}
+.head img{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+/* animation for favoutites text */
+@keyframes flexible {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotateY(360deg);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+.favs {
+	animation-name: flexible;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	perspective: 10000px;
+	transform-style: preserve-3d;
+	animation-iteration-count: infinite;
+}
+@keyframes ringing_bell {
+	0% {
+		transform: rotate(-15deg);
+	}
+	50% {
+		transform: rotate(15deg);
+	}
+	100% {
+		transform: rotate(-15deg);
+	}
+}
+.notification-bell img {
+	width: 50px;
+	height: 40px;
+	animation-name: ringing_bell;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+/*------------------------------------------------------------------------HEADER SECTION END------------------------------------------------------------------------------ */
+
+/*-----------------------------------------------------------------------------MAIN--------------------------------------------------------------------------------------*/
+
+#content{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: 80px;
+}
+
+#left{
+    height:86vh;
+    width: 65%;
+    padding-top: 5%;
+    background-color: transparent;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    
+}
+#left::-webkit-scrollbar{
+
+    display: none;
+}
+#imagecsrl{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.headerimage{
+    
+    transition: 0.2s;
+    width: 40%;
+    height: 250px;
+} 
+.headerimage img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}   
+.headerimage:hover{
+    transform: scale(1.1);
+    z-index: 5;
+}
+#right{
+    height: 86vh;
+    width: 25%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: column;
+    
+   
+}
+ 
+/*----------------------------------------------------latest release-----------------------------------------------------*/
+#latestRelease{
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.options {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap-reverse;
+	text-align: right;
+	margin-left: auto;
+	margin-right: 2%;
+	margin-top: 2%;
+}
+/* this is for the latest release drop down menu */
+.latest-release-dropdown {
+	position: absolute;
+	background-color: rgb(61, 7, 61);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	top: 20px;
+	right: 0px;
+	overflow: hidden;
+	z-index: 2;
+	border: 1px solid black;
+	box-shadow: 0px 0px 2px 1px black;
+	transition: all ease-in-out 0.3s;
+}
+/* icon in the latest release drop down */
+.fa-ellipsis-h {
+	cursor: pointer;
+}
+/* this input is for the latest release drop down */
+input[type="checkbox"] {
+	display: none;
+}
+/* checking it, will trigger the latest release dropdown */
+input[type="checkbox"]:checked ~ .latest-release-dropdown {
+	width: max-content;
+	height: auto;
+	opacity: 1;
+	padding: 5px;
+}
+/* options in the lastest release drop down */
+.drop-item p {
+	text-align: center;
+}
+.releases{
+    margin-top: 20px;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+
+    font-size: 20px;
+
+}
+.sectionHeading{
+    margin-top: 5%;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.songimg{
+    height: 100%;
+    width: 150px;
+}
+.songimg img{
+    height: 100%;
+    width: 100%;
+    transition: box-shadow ease-in-out 0.2s;
+
+}
+.songimg img:hover{
+    box-shadow: 0px 0px 15px 1px white;
+
+
+}
+.songdet{
+    height: 100%;
+    width: calc(100% - 160px);
+    display: flex;
+}
+.det{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+}
+.leftdet{
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+}
+.rightdet{
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.rightdet h5{
+    margin-top: 20px;
+    color: white;
+}
+.songName{
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+
+}
+.date{
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+
+
+}
+/*----------------------------------------------- LATEST RELEASE END -----------------------------------------------*/
+
+
+/*-------------------------------------------------POPULAR ARTIST----------------------------------------------------*/
+
+#PopularArt{
+    height: 300px;
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    background-color: transparent;
+        
+}
+.artist{
+    margin-top: 4%;
+    padding: 5px;
+    width: 19%;
+    height:200px;
+    justify-content: space-between;
+    align-items: center;
+          
+}
+.artist a{
+    
+    text-decoration: none;
+
+
+}
+
+
+.artist img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    transition: opacity ease-in-out 0.1s;
+}
+.artist > a > div > div {
+	position: absolute;
+	display: flex;
+	/* top: 0px;
+    left: 0px; */
+	top: 0px;
+	width: 10vw;
+	min-width: 60px;
+	min-height: 60px;
+	height: 10vw;
+	border-radius: 50%;
+	background-color: rgb(0, 0, 0);
+	opacity: 0;
+	transition: opacity ease-in-out 0.1s;
+}
+/* additional icons in this section */
+.artist a div div i {
+	margin: auto;
+	font-size: 3vw;
+	opacity: 0;
+	transition: opacity ease-in-out 0.2s;
+} /* added hovering effects */
+.artist a div div:hover {
+	opacity: 0.5;
+}
+.artist a  div:hover i {
+	opacity: 1;
+}
+/* text portion in popular artists section */
+.artist div p {
+	text-align: center;
+}
+.artist img:hover{
+    opacity: 0.5;
+    transition: opacity ease-in-out 0.2s;
+    background-color: rgba(243, 235, 243, 0.589);
+    box-shadow: 0px 0px 15px 1px white;
+    /* background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(34, 23, 32, 0.575)); */
+}
+
+.artname{
+
+color: whitesmoke;
+font-size: 20px;
+text-align: center;
+font-family: sans-serif;
+margin-top: 7px;
+}
+/*--------------------------------------------------- POPULAR ARTIST END --------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------PARTY-------------------------------*/
+#party{
+    width: 100%;
+    height: auto;
+    margin-top: 2.5%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: transparent;
+}
+.enjoy{
+    height: 200px;
+    width: 31%;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    display: flex;
+    background-size: 100%;
+    transition: all 0.5s ease-in-out;
+
+
+}
+.enjoy:hover{
+    background-size: 150%;
+
+}
+.party{
+
+    transition: all 0.5s ease-in-out;
+
+    background-image: url(https://media.istockphoto.com/photos/christmas-party-picture-id1055686622?k=20&m=1055686622&s=612x612&w=0&h=A4o02PXmULnzxH5CeJL-Tf_wkhkHCLHKyGPJXVR6YZo=);
+
+}
+.party:hover{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(34, 23, 32, 0.575)),url(https://media.istockphoto.com/photos/christmas-party-picture-id1055686622?k=20&m=1055686622&s=612x612&w=0&h=A4o02PXmULnzxH5CeJL-Tf_wkhkHCLHKyGPJXVR6YZo=);
+
+}
+
+
+.electronic{
+    background-image: url(https://lifeinitaly.com/wp-content/uploads/2016/12/DJs.jpg)
+}
+.electronic:hover{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(37, 30, 36, 0.459)), url(https://lifeinitaly.com/wp-content/uploads/2016/12/DJs.jpg)
+
+}
+.roadtrip{
+    background-image: url(https://www.bargainautocentre.com/media/blog/ab1083/images/featured-image-3002.jpg);
+}
+.roadtrip:hover{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(37, 30, 36, 0.5)),url(https://www.bargainautocentre.com/media/blog/ab1083/images/featured-image-3002.jpg);
+
+}
+
+.enjoy img{
+    height: 100%;
+    width: 100%;
+}
+/*--------------------------------------------------------------- PARTY END-------------------------------------------- */
+
+
+
+/*-------------------------------------------------------------------STATION---------------------------------------------*/
+#station{
+    height: 170px;
+    width: 100%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+
+.leftstation{
+    width: 20%;
+    height: 100%;
+    padding: 5px;
+
+}
+.leftstation img{
+    width: 94%;
+    height: 94%;
+
+}
+.rightstation{
+    width: 80%;
+    height: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    
+}
+.genere{
+    width: 15%;
+    height: 65%;
+    border-radius: 50%;
+    color: white;
+    text-shadow: 2px 2px 8px black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.genere:hover{
+    color: rgb(46, 5, 46);
+    transition: all ease-in-out 0.25s;
+
+}
+.love{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeMNQrP-U_aGEawv0zNy-prdtlkMVpaMFUyA&usqp=CAU);
+}
+.chill{
+    
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(46, 42, 45, 0.73)),url(https://i.pinimg.com/236x/da/ec/93/daec93d7b06a2d8c84c93941d70d369b.jpg);
+}
+
+
+.retro{
+    background-image: linear-gradient(to bottom, rgba(250, 252, 245, 0.52), rgba(228, 179, 17, 0.623)),url(https://wallpaperaccess.com/full/2870584.jpg);
+}
+.workout{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(46, 42, 45, 0.418)),url(https://parade.com/wp-content/uploads/2020/01/best-workout-apps-FTR.jpg);
+}
+.rock{
+    background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(46, 42, 45, 0.73)), url(https://cdn.lifehack.org/wp-content/uploads/2015/09/rock-music-wallpapers.jpg);
+}
+.pop{
+    background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(109, 30, 89, 0.637)), url(https://wallpaperaccess.com/full/1130189.jpg);
+}
+
+/*------------------------------------------------------ STATION END --------------------------------------------------/
+
+/*------------------------------------------------------LATEST ENGLISH--------------------------------------------------*/
+#latestenglish{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:   transparent;
+
+
+}
+
+.english{
+    width: 15.5%;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.english img{
+    height: 80%;
+    width: 90%;
+    transition: box-shadow ease-in-out 0.2s;
+    
+
+}
+.english img:hover{
+    box-shadow: 0px 0px 15px 1px white;
+}
+
+/*-------------------------------------------------- LATEST ENGLISH END ----------------------------------------------*/
+
+/*----------------------------------------------------LATEST HINDI--------------------------------------------------*/
+#latesthindi{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:   transparent;
+
+
+
+}
+/*------------------------------------------------------QUEUE------------------------------------------------------*/
+#queue{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 75px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    
+}
+#queue::-webkit-scrollbar{
+    display: none;
+}
+.queue-options {
+	position: fixed;
+	right: 4%;
+	top: 17%;
+	background-color: #f8f9fa;
+	width: 10%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 1%;
+	box-sizing: border-box;
+	overflow: hidden;
+	z-index: 2; /* to cover the heart icon */
+	opacity: 0;
+	transform: scale(0);
+	transition: all ease-in-out 0.25s;
+    
+}
+/* when the queue option box becomes target */
+#queue-option-box:target {
+	opacity: 1;
+	transform: scale(1);
+}
+.queue-options {
+	color: black;
+}
+.queue-options p {
+	text-align: center;
+}
+.queue-options p a {
+	text-decoration: none;
+}
+
+/* horizontal line in queue options box */
+hr {
+	width: 90%;
+	color: black;
+}
+.rightqueue{
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 2px;
+   
+}
+
+input:focus {
+    outline: none;
+}
+button {
+    border: none;
+}
+button:focus {
+    outline: none;
+}
+.indexImg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+.indexImg img {
+    width: 60px;
+    height: 70%;
+    border-radius: 10px;
+}
+.queueInfo {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.songInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.rightqueue i{
+    font-size: 30px;
+    margin-top: 10px;
+    
+}
+.describe{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+#lefthead{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 7px;
+
+
+}
+#righthead{
+    font-size: 1rem;
+    color: green;
+    padding-right: 7px;
+    padding-top: 6px;
+
+}
+#righthead a{
+    text-decoration: none;
+}
+#righthead i{
+    font-size: 1rem;
+    
+}
+#righthead:hover{
+    color: blueviolet;
+    cursor: pointer;
+
+}
+.heart{
+    font-weight: lighter;
+}
+ 
+/*---------------------------------------------------- QUEUE END---------------------------------------------- */
+
+/*------------------------------------------------------FOOTER-------------------------------------------------*/
+#footer{
+    height: 70px;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(89, 85, 155) 25%, rgb(156, 72, 149) 86%);
+    z-index: 500;
+    position: fixed;
+    top: calc(100vh - 70px);
+    display: flex;
+    
+}
+.foot{
+    height:100% ;
+    width: 34%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+
+}
+.footimg{
+    height: 100%;
+    width: 14%;
+    margin-left:13%;
+    margin-right: 10px;
+
+}
+.footleft{
+    height: 100%;
+    width: 34%;
+    margin-right: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      
+}
+.footdetail{
+    margin: 6%;
+    margin-top: 5%;
+
+}
+
+.foot img {
+    height: 100%;
+    width: 100%;
+}
+.footmiddle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footmiddle{
+    font-size: 1.5rem;
+    color:lightgrey;
+}
+.slider{
+    font-size: 1.5rem;
+    color:lightgrey;
+    width: 100%;
+
+}
+.time{
+    font-size:  0.8rem;
+}
+.slider1{
+    margin-top: 5%;
+    align-items: center;
+}
+.footright{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    margin-left: 10%;
+    color: lightgrey;
+    
+    
+}
+.footname{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.foot1{
+    height:100% ;
+    width: 34%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+.upper{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.slider input{
+    width: 80%;
+
+}
+.foot2{
+    height:100% ;
+    width: 34%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+
+}
+
+/*------------------------------------------------------- FOOTER END -----------------------------------------------------*/

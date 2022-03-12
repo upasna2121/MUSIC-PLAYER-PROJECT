@@ -1,0 +1,575 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: sans-serif;
+    color: white;
+}
+body{
+    background-image: url(./IMAGES/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/*-------------------------------------------------------------------------HEADER-----------------------------------------------------------------------------------------*/
+
+header{
+    height: 75px; 
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    box-shadow: 1px 1px 9px 1px #00000038;
+    background-color:  rgb(60 19 157);
+     position: fixed;
+     top: 0;
+     z-index: 1000000;
+
+}
+.logo span{
+    font-weight: lighter;
+
+}
+
+.sectionheading{ 
+
+    height: 100%;
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.rightsection{
+    width: 45%;
+
+}
+.leftsection{
+    width: 30%;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search button {
+    padding: 5px;
+    background-color: white;
+
+}
+.search button i{
+    color: black;
+}
+.search input {
+    border: none;
+    padding: 5px ;
+    
+}
+.leftbtn {
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+
+}
+.rightbtn {
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.logo{
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: space-around;
+    color:white; 
+    width: 50%;
+    align-items: center;
+    display: flex;
+    
+}
+.logo img{
+    height: 60px;
+    width: 60px;
+}
+.head{
+    width: 50%;
+    justify-content: space-around;
+    color:white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+
+
+}
+.head img{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+/* animation for favoutites text */
+@keyframes flexible {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotateY(360deg);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+.favs {
+	animation-name: flexible;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	perspective: 10000px;
+	transform-style: preserve-3d;
+	animation-iteration-count: infinite;
+}
+@keyframes ringing_bell {
+	0% {
+		transform: rotate(-15deg);
+	}
+	50% {
+		transform: rotate(15deg);
+	}
+	100% {
+		transform: rotate(-15deg);
+	}
+}
+.notification-bell img {
+	width: 40px;
+	height: 35px;
+	animation-name: ringing_bell;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+
+
+/*-------------------------------------------------------------------------- HEADER END ----------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------*/
+
+#content{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+
+}
+
+#left{
+    height: auto;
+    width: 65%;
+    padding-top: 5%;
+
+    
+}
+#mainhead{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+
+}
+#headimg{
+    height: 100%;
+    width: 36%;
+    
+
+}
+#headimg img {
+    height: 100%;
+    width: 100%;
+
+}
+#headcontent{
+    height: 100%;
+    width: 62%;
+
+    align-items: center;
+
+
+}
+.code{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+.play{
+    
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+ #play { 
+
+    color: white;
+    font-size: 15px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,28,172,1) 25%, rgba(231,85,241,1) 91%);
+    height: 30px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }
+ #follow{
+     font-size: 15px;
+     margin-right: 62%;
+ }
+.heading{
+    color:white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 10%;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+/*-------------------------------------------------LEFT LOWER----------------------------------------------------------*/
+#lower{
+    
+    height: 86vh;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: column;
+    
+}
+
+.lowerqueue i{
+    font-size: 1rem;
+}
+.icons{
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+
+}
+
+/*------------------------------------------------ LEFT LOWER END-------------------------------------------------------*/
+
+/*--------------------------------------------------RIGHT QUEUE-----------------------------------------------------------*/
+#right{
+    height: 86vh;
+    width: 25%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: column;
+    margin-top: 50px;
+    
+    
+
+}
+.right{
+    height: 700px;
+    width: 25%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: column;
+    
+
+}
+#rightartist{
+    height: 100%;
+    width: 100%;
+}
+#similarartist{
+
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: scroll;
+    margin-bottom: 7%;
+}
+#similarartist::-webkit-scrollbar {
+    display: none;
+}
+.releases{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+
+    font-size: 20px;
+
+}
+.sectionHeading{
+    margin-top: 5%;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.songimg{
+    height: 100%;
+    width: 70px;
+    border-radius: 10px;
+
+}
+.songimg img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+}
+.songdet{
+    height: 100%;
+    width: calc(100% - 160px);
+    display: flex;
+}
+.det{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+}
+.leftdet{
+    align-items: flex-start;
+    justify-content: center;
+    color:black;
+}
+.rightdet{
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.rightdet h5{
+    margin-top: 20px;
+    color: white;
+}
+
+#recentlyplay{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+}
+#recentlyplay::-webkit-scrollbar {
+    display: none;
+}
+.rp{
+    justify-content: flex-start;
+    display: flex;
+    height: 86vh;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 30px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+.rp::-webkit-scrollbar{
+    display: none;
+}
+.rightqueue{
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 5px;
+    
+}
+
+input:focus {
+    outline: none;
+}
+button {
+    border: none;
+}
+button:focus {
+    outline: none;
+}
+.indexImg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+
+}
+.indexImg img {
+    width: 60px;
+    height: 70%;
+    border-radius: 10px;
+}
+.queueInfo {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.songInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.rightqueue i{
+    font-size: 30px;
+    margin-top: 10px;
+    
+}
+.describe{
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
+#lefthead{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 7px;
+
+
+}
+#righthead{
+    font-size: 1rem;
+    color:lightcoral;
+    padding-right: 7px;
+    padding-top: 6px;
+
+
+}
+#righthead:hover{
+    color: blueviolet;
+
+}  
+
+/*---------------------------------------------------- RIGHT QUEUE END----------------------------------------- */
+
+
+/*--------------------------------------------------------FOOTER-----------------------------------------------*/
+#footer{
+    height: 70px;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(89, 85, 155) 25%, rgb(156, 72, 149) 86%);
+    z-index: 500;
+    position: fixed;
+    top: calc(100vh - 70px);
+    display: flex;
+    
+}
+.foot{
+    height:100% ;
+    width: 34%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+
+}
+.footimg{
+    height: 100%;
+    width: 14%;
+    margin-left:13%;
+    margin-right: 10px;
+
+}
+.footleft{
+    height: 100%;
+    width: 30%;
+    margin-right: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      
+}
+.footdetail{
+    margin: 6%;
+    margin-top: 5%;
+    color: lightgrey
+
+}
+
+.foot img {
+    height: 100%;
+    width: 100%;
+}
+.footmiddle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footmiddle{
+    font-size: 1.5rem;
+    color:lightgrey;
+}
+.slider{
+    font-size: 1.5rem;
+    color:lightgrey;
+    width: 100%;
+    display: flex;
+
+}
+.time{
+    font-size:  0.8rem;
+}
+.slider1{
+    margin-top: 5%;
+    align-items: center;
+}
+.footright{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    margin-left: 10%;
+    color: lightgrey;
+    
+    
+}
+.footname{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: lightgrey;
+}
+.foot1{
+    height:100% ;
+    width: 34%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+.upper{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.slider input{
+    width: 80%;
+
+}
+.foot2{
+    height:100% ;
+    width: 34%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+
+}
+/*---------------------------------------------------------- FOOTER END----------------------------------------- */
+
+.lowerqueue{
+    background-color:#ee82ee2e;
+    margin-bottom: 10px;
+    height:70vh;   
+}
